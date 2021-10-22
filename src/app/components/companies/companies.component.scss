@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+.mat-header-row {
+  th {
+    padding: 10px 20px;
+  }
+}
+
+.mat-row {
+  &:hover {
+    .mat-cell {
+      // border-color: currentColor;
+    }
+  }
+  .mat-cell {
+    border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
+    // cursor: pointer;
+    padding: 10px 20px;
+  }
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

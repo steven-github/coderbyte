@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <mat-form-field>
+        <input type="text" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="form.controls.email.errors">
+          <span *ngIf="form.controls.email.errors.required">Email is required</span>
+          <span *ngIf="form.controls.email.errors.pattern">
+            Invalid email
+          </span>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="form.controls.password.errors">
+          <span *ngIf="form.controls.password.errors.required">Password is required</span>
+          <span *ngIf="form.controls.password.errors.minlength">
+            Password must be at least 8 characters
+          </span>
+          <span *ngIf="form.controls.password.errors.maxlength">
+            Password must not exceed 16 characters
+          </span>
+          <span *ngIf="form.controls.password.errors.pattern">
+            Password should contains at least one Uppercase, one lowercase and one special character
+          </span>
+        </mat-error>
+      </mat-form-field>
+
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Login</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
